@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoPro | Cart</title>
+
+    <!-- Font Awesome for the cart icon -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <!-- Site CSS (includes the cart styles we added) -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <section id="header">
+        <a href="index.html" class="logo">EcoPro</a>
+        <nav>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a class="active" href="cart.html">Cart</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        <i class="far fa-shopping-bag"></i>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Cart Page -->
+    <section class="cart-page section-p1">
+        <h1 class="cart-title">Your Cart</h1>
+
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="cart-table-body"></tbody>
+        </table>
+
+        <div class="cart-total">
+            <span>Total: <strong id="cart-total">$0.00</strong></span>
+            <button id="place-order" class="place-order">Place Order</button>
+        </div>
+    </section>
+
+    <!-- Toast -->
+    <div id="toast" aria-live="polite"></div>
+
+    <!-- Scripts (order matters) -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="sscript.js" defer></script>
+</body>
+
+</html>
+<section class="section-p1">
+    <h2>TAU-bench Inspired Agent Evaluation</h2>
+    <p>This runs sample retail tasks and checks whether the final cart state is correct.</p>
+    <button id="run-tau-eval" class="place-order">Run Evaluation</button>
+    <div id="tau-results"></div>
+</section>
+<script src="tau_eval.js" defer></script>
+<!-- Voice Shopping Agent -->
+<div id="agent-widget" class="agent-widget">
+    <div class="agent-header">EcoPro Assistant</div>
+    <div id="agent-log" class="agent-log">
+        <div class="agent-msg bot">Hi! You can say things like “add Palm Whisper Shirt”, “show my cart”, or “find shirts
+            under 60 dollars”.</div>
+    </div>
+    <div class="agent-controls">
+        <button id="agent-mic" class="agent-btn">🎤 Speak</button>
+        <button id="agent-stop" class="agent-btn secondary">⏹ Stop</button>
+    </div>
+</div>
+<script src="voiceAgent.js" defer></script>
